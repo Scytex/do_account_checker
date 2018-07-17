@@ -12,7 +12,6 @@ namespace do_account_checker.Http
     class Request
     {
         private CookieContainer cookieContainer = new CookieContainer();
-        private CookieCollection cookieCollection = new CookieCollection();
         private string referer = string.Empty;
         public string Get(string url)
         {
@@ -32,16 +31,12 @@ namespace do_account_checker.Http
             if (responseStream == null)
                 return "";
             var sr = new StreamReader(responseStream);
-            var html = sr.ReadToEnd();
-            foreach (Cookie cookie in response.Cookies)
-            {
-                cookieContainer.Add(cookie);
-            }
+            var serverResponse = sr.ReadToEnd();
             sr.Close();
             response.Close();
             referer = url;
-            cookieCollection = response.Cookies;
-            return html;
+
+            return serverResponse;
         }
 
         public string Post(string url, string data)
@@ -49,15 +44,14 @@ namespace do_account_checker.Http
             var request = WebRequest.CreateHttp(url);
             request.Method = "POST";
             request.CookieContainer = cookieContainer;
-            request.UserAgent =
-                "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36";
+            request.UserAgent = "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36";
             request.ContentType = "application/x-www-form-urlencoded";
             request.Proxy = new WebProxy();
             request.Referer = referer;
             request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8";
             request.KeepAlive = true;
-            request.Credentials = CredentialCache.DefaultCredentials;
-            request.Date = DateTime.Now;
+            request.AllowAutoRedirect = false;
+            request.PreAuthenticate = true;
             var buffer = Encoding.UTF8.GetBytes(data);
             request.ContentLength = buffer.Length;
             using (var stream = request.GetRequestStream())
@@ -65,22 +59,20 @@ namespace do_account_checker.Http
                 stream.Write(buffer, 0, buffer.Length);
             }
 
-            var response = (HttpWebResponse)request.GetResponse();
-            var responseStream = response.GetResponseStream();
-            if (responseStream == null)
-                return "";
-            var reader = new StreamReader(responseStream);
-            var serverResponse = reader.ReadToEnd();
-            foreach (Cookie cookie in response.Cookies)
-            {
-                cookieContainer.Add(cookie);
-            }
-            reader.Close();
-            responseStream.Close();
-            response.Close();
             referer = url;
-            
-            return serverResponse;
+
+            using (var response = request.GetResponse())
+            {
+                using (var responseStream = response.GetResponseStream())
+                {
+                    if (responseStream == null)
+                        return "";
+                    using (var streamReader = new StreamReader(responseStream))
+                    {
+                        return streamReader.ReadToEnd();
+                    }
+                }
+            }
         }
     }
 }

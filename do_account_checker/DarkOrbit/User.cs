@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using do_account_checker.Extensions;
 using do_account_checker.Http;
+using System.Net;
 
 namespace do_account_checker.DarkOrbit
 {
@@ -23,7 +24,8 @@ namespace do_account_checker.DarkOrbit
         public bool Login()
         {
             var mainPage = request.Get("https://www.darkorbit.com");
-            var authUrl = mainPage.Between("class=\"bgcdw_login_form\" action=\"", "\"");
+            var authUrl = WebUtility.HtmlDecode(mainPage.Between("class=\"bgcdw_login_form\" action=\"", "\""));
+
             var result = request.Post(authUrl,
                 "username=" + Username + "&password=" + Password);
             return true;
