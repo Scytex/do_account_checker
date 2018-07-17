@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using do_account_checker.DarkOrbit;
 
 namespace do_account_checker
 {
@@ -15,6 +16,7 @@ namespace do_account_checker
         public MainForm()
         {
             InitializeComponent();
+            new User("test", "test").Login();
         }
     }
 }
