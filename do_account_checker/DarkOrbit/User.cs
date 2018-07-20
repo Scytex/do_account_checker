@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 using do_account_checker.Extensions;
 using do_account_checker.Http;
-using System.Net;
 
 namespace do_account_checker.DarkOrbit
 {
