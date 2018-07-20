@@ -39,13 +39,17 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.pnlAccountInformation = new System.Windows.Forms.GroupBox();
             this.lblUridium = new System.Windows.Forms.Label();
-            this.lblUridiumText = new System.Windows.Forms.Label();
+            this.lblUridiumNOEDIT = new System.Windows.Forms.Label();
             this.pnlAccounts = new System.Windows.Forms.GroupBox();
             this.btnCollectAll = new System.Windows.Forms.Button();
             this.btnLoginAll = new System.Windows.Forms.Button();
             this.btnCollect = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.listAccounts = new System.Windows.Forms.ListView();
+            this.lblUserIdNOEDIT = new System.Windows.Forms.Label();
+            this.lblUserId = new System.Windows.Forms.Label();
+            this.lblCreditsNOEDIT = new System.Windows.Forms.Label();
+            this.lblCredits = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.pnlAccounts.SuspendLayout();
@@ -141,8 +145,12 @@
             // 
             // pnlAccountInformation
             // 
+            this.pnlAccountInformation.Controls.Add(this.lblCredits);
+            this.pnlAccountInformation.Controls.Add(this.lblCreditsNOEDIT);
+            this.pnlAccountInformation.Controls.Add(this.lblUserId);
+            this.pnlAccountInformation.Controls.Add(this.lblUserIdNOEDIT);
             this.pnlAccountInformation.Controls.Add(this.lblUridium);
-            this.pnlAccountInformation.Controls.Add(this.lblUridiumText);
+            this.pnlAccountInformation.Controls.Add(this.lblUridiumNOEDIT);
             this.pnlAccountInformation.Location = new System.Drawing.Point(218, 12);
             this.pnlAccountInformation.Name = "pnlAccountInformation";
             this.pnlAccountInformation.Size = new System.Drawing.Size(570, 160);
@@ -153,19 +161,19 @@
             // lblUridium
             // 
             this.lblUridium.AutoSize = true;
-            this.lblUridium.Location = new System.Drawing.Point(57, 23);
+            this.lblUridium.Location = new System.Drawing.Point(59, 49);
             this.lblUridium.Name = "lblUridium";
             this.lblUridium.Size = new System.Drawing.Size(0, 13);
-            this.lblUridium.TabIndex = 1;
+            this.lblUridium.TabIndex = 3;
             // 
-            // lblUridiumText
+            // lblUridiumNOEDIT
             // 
-            this.lblUridiumText.AutoSize = true;
-            this.lblUridiumText.Location = new System.Drawing.Point(6, 23);
-            this.lblUridiumText.Name = "lblUridiumText";
-            this.lblUridiumText.Size = new System.Drawing.Size(45, 13);
-            this.lblUridiumText.TabIndex = 0;
-            this.lblUridiumText.Text = "Uridium:";
+            this.lblUridiumNOEDIT.AutoSize = true;
+            this.lblUridiumNOEDIT.Location = new System.Drawing.Point(6, 49);
+            this.lblUridiumNOEDIT.Name = "lblUridiumNOEDIT";
+            this.lblUridiumNOEDIT.Size = new System.Drawing.Size(45, 13);
+            this.lblUridiumNOEDIT.TabIndex = 2;
+            this.lblUridiumNOEDIT.Text = "Uridium:";
             // 
             // pnlAccounts
             // 
@@ -226,7 +234,41 @@
             this.listAccounts.UseCompatibleStateImageBehavior = false;
             this.listAccounts.View = System.Windows.Forms.View.List;
             // 
-            // GuiForm
+            // lblUserIdNOEDIT
+            // 
+            this.lblUserIdNOEDIT.AutoSize = true;
+            this.lblUserIdNOEDIT.Location = new System.Drawing.Point(6, 23);
+            this.lblUserIdNOEDIT.Name = "lblUserIdNOEDIT";
+            this.lblUserIdNOEDIT.Size = new System.Drawing.Size(46, 13);
+            this.lblUserIdNOEDIT.TabIndex = 0;
+            this.lblUserIdNOEDIT.Text = "User ID:";
+            // 
+            // lblUserId
+            // 
+            this.lblUserId.AutoSize = true;
+            this.lblUserId.Location = new System.Drawing.Point(59, 23);
+            this.lblUserId.Name = "lblUserId";
+            this.lblUserId.Size = new System.Drawing.Size(0, 13);
+            this.lblUserId.TabIndex = 1;
+            // 
+            // lblCreditsNOEDIT
+            // 
+            this.lblCreditsNOEDIT.AutoSize = true;
+            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(6, 75);
+            this.lblCreditsNOEDIT.Name = "lblCreditsNOEDIT";
+            this.lblCreditsNOEDIT.Size = new System.Drawing.Size(42, 13);
+            this.lblCreditsNOEDIT.TabIndex = 4;
+            this.lblCreditsNOEDIT.Text = "Credits:";
+            // 
+            // lblCredits
+            // 
+            this.lblCredits.AutoSize = true;
+            this.lblCredits.Location = new System.Drawing.Point(59, 75);
+            this.lblCredits.Name = "lblCredits";
+            this.lblCredits.Size = new System.Drawing.Size(0, 13);
+            this.lblCredits.TabIndex = 5;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +276,7 @@
             this.Controls.Add(this.pnlAccounts);
             this.Controls.Add(this.pnlAccountInformation);
             this.Controls.Add(this.pnlLogin);
-            this.Name = "GuiForm";
+            this.Name = "MainForm";
             this.Text = "Darkorbit Account Manager";
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
@@ -257,7 +299,7 @@
         private System.Windows.Forms.Panel pnlStatus;
         private System.Windows.Forms.GroupBox pnlAccountInformation;
         private System.Windows.Forms.Label lblUridium;
-        private System.Windows.Forms.Label lblUridiumText;
+        private System.Windows.Forms.Label lblUridiumNOEDIT;
         private System.Windows.Forms.Button btnSingleLogin;
         private System.Windows.Forms.GroupBox pnlAccounts;
         private System.Windows.Forms.Button btnCollectAll;
@@ -265,6 +307,10 @@
         private System.Windows.Forms.Button btnCollect;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.ListView listAccounts;
+        private System.Windows.Forms.Label lblUserIdNOEDIT;
+        private System.Windows.Forms.Label lblUserId;
+        private System.Windows.Forms.Label lblCreditsNOEDIT;
+        private System.Windows.Forms.Label lblCredits;
     }
 }
 

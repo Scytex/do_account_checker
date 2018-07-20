@@ -24,6 +24,16 @@ namespace do_account_checker
             lblUridium.Text = uridium;
         }
 
+        public void SetUserId(string userId)
+        {
+            lblUserId.Text = userId;
+        }
+
+        public void SetCredits(string credits)
+        {
+            lblCredits.Text = credits;
+        }
+
         private void BtnAddAccount_Click(object sender, EventArgs e)
         {
             _guiHandler.AddAccount(txtUsername.Text, txtPassword.Text);
