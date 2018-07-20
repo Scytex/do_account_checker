@@ -31,7 +31,7 @@ namespace do_account_checker.GUI
 
         private void LoadAccountInformations()
         {
-            _form.SetUridium(_user.GetUridium());
+            _form.SetUridium(_user.Uridium);
         }
     }
 }

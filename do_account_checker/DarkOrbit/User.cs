@@ -17,17 +17,20 @@ namespace do_account_checker.DarkOrbit
             Username = username;
         }
 
-        public string GetUridium()
+        public string Uridium
         {
-            const string start1 = "<a id=\"header_uri\" class=\"header_money\"";
-            const string start3 = ");\"";
-            var start2 = _content.GetBetween(start1, start3);
+            get
+            {
+                const string start1 = "<a id=\"header_uri\" class=\"header_money\"";
+                const string start3 = ");\"";
+                var start2 = _content.GetBetween(start1, start3);
 
-            var start = start1 + start2 + start3;
-            const string end = "</a>";
+                var start = start1 + start2 + start3;
+                const string end = "</a>";
 
-            var uridium = _content.GetBetween(start, end);
-            return uridium.Replace(" ", "").Replace(">", "").Replace("\n", "");
+                var uridium = _content.GetBetween(start, end);
+                return uridium.Replace(" ", "").Replace(">", "").Replace("\n", "");
+            }
         }
 
         public bool Login()
