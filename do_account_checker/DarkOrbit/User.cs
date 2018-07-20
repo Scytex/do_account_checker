@@ -36,6 +36,10 @@ namespace do_account_checker.DarkOrbit
             }
         }
 
+        public string UserId => _content.GetBetween("<span>", "</span>");
+
+        public string Credits => _content.GetBetween("class=\"header_money\">", "</div>").Trim();
+
         public bool Login()
         {
             var mainPage = _webRequestHandler.Get("https://www.darkorbit.com").Content;
