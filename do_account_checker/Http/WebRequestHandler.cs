@@ -38,31 +38,5 @@ namespace do_account_checker.Http
 
             return _client.Execute(request);
         }
-
-        private static string GetToken()
-        {
-            var request = (HttpWebRequest)WebRequest.Create(new Uri("http://www.darkorbit.de/"));
-            request.Method = WebRequestMethods.Http.Get;
-            var response = (HttpWebResponse)request.GetResponse();
-            var responseStream = response.GetResponseStream();
-            var reader = new StreamReader(responseStream ?? throw new InvalidOperationException()); //TODO Exception
-            var responseString = reader.ReadToEnd();
-
-            return GetToken(responseString);
-        }
-
-        private static string GetToken(string source)
-        {
-            const string start = "class=\"bgcdw_login_form\" action=\"https://sas.bpsecure.com/Sas/Authentication/Bigpoint?authUser=22&amp;token=";
-            const string end = "\"";
-            return GetStringBetween(source, start, end);
-        }
-
-        private static string GetStringBetween(string text, string start, string end)
-        {
-            var startIndex = text.IndexOf(start, 0, StringComparison.Ordinal) + start.Length;
-            var endIndex = text.IndexOf(end, startIndex, StringComparison.Ordinal);
-            return text.Substring(startIndex, endIndex - startIndex);
-        }
     }
 }

@@ -17,10 +17,13 @@ namespace do_account_checker.DarkOrbit
             Username = username;
         }
 
+        // TODO: Make this an int
         public string Uridium
         {
             get
             {
+                if (_content == "")
+                    return "0";
                 const string start1 = "<a id=\"header_uri\" class=\"header_money\"";
                 const string start3 = ");\"";
                 var start2 = _content.GetBetween(start1, start3);

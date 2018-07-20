@@ -18,15 +18,9 @@ namespace do_account_checker.Extensions
 
         public static string GetBetween(this string value, string start, string end)
         {
-            var result = string.Empty;
-            var length = start.Length;
-            var startIndex = value.IndexOf(start, 0, StringComparison.Ordinal);
-            var endIndex = value.IndexOf(end, startIndex + length, StringComparison.Ordinal);
-            if (startIndex != -1 && endIndex != -1)
-            {
-                result = value.Substring(startIndex + length, endIndex - (startIndex + length));
-            }
-            return result;
+            var startIndex = value.IndexOf(start, 0, StringComparison.Ordinal) + start.Length;
+            var endIndex = value.IndexOf(end, startIndex, StringComparison.Ordinal);
+            return value.Substring(startIndex, endIndex - startIndex);
         }
     }
 }
