@@ -58,7 +58,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GuiHandler.cs" />
-    <Compile Include="Http\Request.cs" />
     <Compile Include="Http\WebRequestHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using RestSharp;
 
@@ -8,44 +10,33 @@ namespace do_account_checker.Http
     internal class WebRequestHandler
     {
         private readonly RestClient _client = new RestClient();
-        private string _content;
-        /// <summary>
-        /// Logs into Account using Username & Password
-        /// </summary>
-        /// <param name="username">DO Username</param>
-        /// <param name="password">DO Password</param>
-        /// <returns>Login successful</returns>
-        public bool LoginToAccount(string username, string password)
+
+        public IRestResponse Get(string url)
         {
-            _client.BaseUrl = new Uri($"https://sas.bpsecure.com/Sas/Authentication/Bigpoint?authUser=22&token={GetToken()}");
+            _client.BaseUrl = new Uri(url);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("content-type", "application/x-www-form-urlencoded");
+
+            return _client.Execute(request);
+        }
+
+        public IRestResponse Post(string url, params KeyValuePair<string, object>[] parameters)
+        {
+            _client.BaseUrl = new Uri(url);
             var request = new RestRequest(Method.POST);
 
+            var data = parameters.Aggregate("",
+                (current, parameter) => current + $"{parameter.Key}={parameter.Value}&");
+
+            if (data.EndsWith("&"))
+            {
+                data = data.Substring(0, data.Length - 1);
+            }
+
             request.AddHeader("content-type", "application/x-www-form-urlencoded");
-            request.AddParameter("application/x-www-form-urlencoded", $"username={username}&password={password}", ParameterType.RequestBody);
+            request.AddParameter("application/x-www-form-urlencoded", data, ParameterType.RequestBody);
 
-            var response = _client.Execute(request);
-            _content = response.Content;
-
-            return response.ResponseUri.AbsoluteUri.Contains("indexInternal.es");
-        }
-
-        public string GetContent()
-        {
-            return _content;
-        }
-
-        public string GetUridium()
-        {
-            const string start1 =
-                "<a id=\"header_uri\" class=\"header_money\"";
-            const string start3 = ");\"";
-            string start2 = GetStringBetween(_content, start1, start3);
-
-            var start = start1 + start2 + start3;
-            var end = "</a>";
-
-            var uridium = GetStringBetween(_content, start, end);
-            return uridium.Replace(" ", "").Replace(">", "").Replace("\n", "");
+            return _client.Execute(request);
         }
 
         private static string GetToken()

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace do_account_checker.Extensions
 {
@@ -20,12 +16,12 @@ namespace do_account_checker.Extensions
             return result;
         }
 
-        public static string Between(this string value, string start, string end)
+        public static string GetBetween(this string value, string start, string end)
         {
             var result = string.Empty;
             var length = start.Length;
-            var startIndex = value.IndexOf(start, 0);
-            var endIndex = value.IndexOf(end, startIndex + length);
+            var startIndex = value.IndexOf(start, 0, StringComparison.Ordinal);
+            var endIndex = value.IndexOf(end, startIndex + length, StringComparison.Ordinal);
             if (startIndex != -1 && endIndex != -1)
             {
                 result = value.Substring(startIndex + length, endIndex - (startIndex + length));

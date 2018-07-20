@@ -1,10 +1,10 @@
-﻿using do_account_checker.Http;
+﻿using do_account_checker.DarkOrbit;
 
 namespace do_account_checker.GUI
 {
     public class GuiHandler
     {
-        private readonly WebRequestHandler _webRequestHandler = new WebRequestHandler();
+        private User _user;
         private readonly MainForm _form;
 
         public GuiHandler(MainForm form)
@@ -14,14 +14,15 @@ namespace do_account_checker.GUI
 
         public void AddAccount(string username, string password)
         {
-            var status = Login(username, password);
+            _user = new User(username, password);
+            var status = Login();
             _form.SetLoginStatus(status);
 
         }
 
-        public bool Login(string username, string password)
+        public bool Login()
         {
-            var status = _webRequestHandler.LoginToAccount(username, password);
+            var status = _user.Login();
 
             if (status)
                 LoadAccountInformations();
@@ -30,7 +31,7 @@ namespace do_account_checker.GUI
 
         private void LoadAccountInformations()
         {
-            _form.SetUridium(_webRequestHandler.GetUridium());
+            _form.SetUridium(_user.GetUridium());
         }
     }
 }
