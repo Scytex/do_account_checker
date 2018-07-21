@@ -61,6 +61,8 @@ namespace do_account_checker.GUI
             _form.SetCredits(user.Credits);
             _form.SetServer(user.Server);
             _form.SetLevel(user.Level);
+            _form.SetExperience(user.Experience);
+            _form.SetHonor(user.Honor);
         }
     }
 }

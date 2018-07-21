@@ -45,7 +45,11 @@ namespace do_account_checker.DarkOrbit
         public string Server => _uri.GetBetween("//", ".");
 
         public string Level =>
-            _content.GetBetween("header_top_level", "header_top_hnr").GetBetween("<span>", "</span>");
+            _content.GetBetween("header_top_level", "</div>").GetBetween("<span>", "</span>");
+
+        public string Experience => _content.GetBetween("header_top_exp", "</div>").GetBetween("<span>", "</span>");
+
+        public string Honor => _content.GetBetween("header_top_hnr", "</div>").GetBetween("<span>", "</span>");
 
         public bool Login()
         {

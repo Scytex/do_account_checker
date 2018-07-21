@@ -59,6 +59,16 @@ namespace do_account_checker
             lblLevel.Text = level;
         }
 
+        public void SetExperience(string experience)
+        {
+            lblExperience.Text = experience;
+        }
+
+        public void SetHonor(string honor)
+        {
+            lblHonor.Text = honor;
+        }
+
         public void AddToList(User[] users)
         {
             foreach (var user in users)

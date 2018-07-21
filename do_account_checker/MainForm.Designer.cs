@@ -59,6 +59,10 @@
             this.lblServer = new System.Windows.Forms.Label();
             this.lblLevelNOEDIT = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
+            this.lblExperienceNOEDIT = new System.Windows.Forms.Label();
+            this.lblExperience = new System.Windows.Forms.Label();
+            this.lblHonorNOEDIT = new System.Windows.Forms.Label();
+            this.lblHonor = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.flowlayAccountInformations.SuspendLayout();
@@ -176,6 +180,10 @@
             this.flowlayAccountInformations.Controls.Add(this.lblCredits);
             this.flowlayAccountInformations.Controls.Add(this.lblLevelNOEDIT);
             this.flowlayAccountInformations.Controls.Add(this.lblLevel);
+            this.flowlayAccountInformations.Controls.Add(this.lblExperienceNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblExperience);
+            this.flowlayAccountInformations.Controls.Add(this.lblHonorNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblHonor);
             this.flowlayAccountInformations.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowlayAccountInformations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowlayAccountInformations.Location = new System.Drawing.Point(3, 16);
@@ -380,6 +388,42 @@
             this.lblLevel.Size = new System.Drawing.Size(0, 13);
             this.lblLevel.TabIndex = 9;
             // 
+            // lblExperienceNOEDIT
+            // 
+            this.lblExperienceNOEDIT.AutoSize = true;
+            this.lblExperienceNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExperienceNOEDIT.Location = new System.Drawing.Point(59, 0);
+            this.lblExperienceNOEDIT.Name = "lblExperienceNOEDIT";
+            this.lblExperienceNOEDIT.Size = new System.Drawing.Size(70, 13);
+            this.lblExperienceNOEDIT.TabIndex = 10;
+            this.lblExperienceNOEDIT.Text = "Experience";
+            // 
+            // lblExperience
+            // 
+            this.lblExperience.AutoSize = true;
+            this.lblExperience.Location = new System.Drawing.Point(59, 13);
+            this.lblExperience.Name = "lblExperience";
+            this.lblExperience.Size = new System.Drawing.Size(0, 13);
+            this.lblExperience.TabIndex = 11;
+            // 
+            // lblHonorNOEDIT
+            // 
+            this.lblHonorNOEDIT.AutoSize = true;
+            this.lblHonorNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHonorNOEDIT.Location = new System.Drawing.Point(59, 26);
+            this.lblHonorNOEDIT.Name = "lblHonorNOEDIT";
+            this.lblHonorNOEDIT.Size = new System.Drawing.Size(41, 13);
+            this.lblHonorNOEDIT.TabIndex = 12;
+            this.lblHonorNOEDIT.Text = "Honor";
+            // 
+            // lblHonor
+            // 
+            this.lblHonor.AutoSize = true;
+            this.lblHonor.Location = new System.Drawing.Point(59, 39);
+            this.lblHonor.Name = "lblHonor";
+            this.lblHonor.Size = new System.Drawing.Size(0, 13);
+            this.lblHonor.TabIndex = 13;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,6 +477,10 @@
         private System.Windows.Forms.Label lblServer;
         private System.Windows.Forms.Label lblLevelNOEDIT;
         private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.Label lblExperienceNOEDIT;
+        private System.Windows.Forms.Label lblExperience;
+        private System.Windows.Forms.Label lblHonorNOEDIT;
+        private System.Windows.Forms.Label lblHonor;
     }
 }
 
