@@ -50,9 +50,11 @@
             this.btnCollect = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.listAccounts = new System.Windows.Forms.ListView();
+            this.flowlayAccountInformations = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.pnlAccounts.SuspendLayout();
+            this.flowlayAccountInformations.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLogin
@@ -146,12 +148,9 @@
             // 
             // pnlAccountInformation
             // 
-            this.pnlAccountInformation.Controls.Add(this.lblCredits);
-            this.pnlAccountInformation.Controls.Add(this.lblCreditsNOEDIT);
-            this.pnlAccountInformation.Controls.Add(this.lblUserId);
-            this.pnlAccountInformation.Controls.Add(this.lblUserIdNOEDIT);
-            this.pnlAccountInformation.Controls.Add(this.lblUridium);
-            this.pnlAccountInformation.Controls.Add(this.lblUridiumNOEDIT);
+            this.pnlAccountInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlAccountInformation.Controls.Add(this.flowlayAccountInformations);
             this.pnlAccountInformation.Location = new System.Drawing.Point(218, 12);
             this.pnlAccountInformation.Name = "pnlAccountInformation";
             this.pnlAccountInformation.Size = new System.Drawing.Size(570, 160);
@@ -162,7 +161,7 @@
             // lblCredits
             // 
             this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(59, 75);
+            this.lblCredits.Location = new System.Drawing.Point(3, 65);
             this.lblCredits.Name = "lblCredits";
             this.lblCredits.Size = new System.Drawing.Size(0, 13);
             this.lblCredits.TabIndex = 5;
@@ -170,7 +169,7 @@
             // lblCreditsNOEDIT
             // 
             this.lblCreditsNOEDIT.AutoSize = true;
-            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(6, 75);
+            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(3, 52);
             this.lblCreditsNOEDIT.Name = "lblCreditsNOEDIT";
             this.lblCreditsNOEDIT.Size = new System.Drawing.Size(42, 13);
             this.lblCreditsNOEDIT.TabIndex = 4;
@@ -179,7 +178,7 @@
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(59, 23);
+            this.lblUserId.Location = new System.Drawing.Point(3, 13);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(0, 13);
             this.lblUserId.TabIndex = 1;
@@ -187,7 +186,7 @@
             // lblUserIdNOEDIT
             // 
             this.lblUserIdNOEDIT.AutoSize = true;
-            this.lblUserIdNOEDIT.Location = new System.Drawing.Point(6, 23);
+            this.lblUserIdNOEDIT.Location = new System.Drawing.Point(3, 0);
             this.lblUserIdNOEDIT.Name = "lblUserIdNOEDIT";
             this.lblUserIdNOEDIT.Size = new System.Drawing.Size(46, 13);
             this.lblUserIdNOEDIT.TabIndex = 0;
@@ -196,7 +195,7 @@
             // lblUridium
             // 
             this.lblUridium.AutoSize = true;
-            this.lblUridium.Location = new System.Drawing.Point(59, 49);
+            this.lblUridium.Location = new System.Drawing.Point(3, 39);
             this.lblUridium.Name = "lblUridium";
             this.lblUridium.Size = new System.Drawing.Size(0, 13);
             this.lblUridium.TabIndex = 3;
@@ -204,7 +203,7 @@
             // lblUridiumNOEDIT
             // 
             this.lblUridiumNOEDIT.AutoSize = true;
-            this.lblUridiumNOEDIT.Location = new System.Drawing.Point(6, 49);
+            this.lblUridiumNOEDIT.Location = new System.Drawing.Point(3, 26);
             this.lblUridiumNOEDIT.Name = "lblUridiumNOEDIT";
             this.lblUridiumNOEDIT.Size = new System.Drawing.Size(45, 13);
             this.lblUridiumNOEDIT.TabIndex = 2;
@@ -281,6 +280,21 @@
             this.listAccounts.UseCompatibleStateImageBehavior = false;
             this.listAccounts.View = System.Windows.Forms.View.List;
             // 
+            // flowlayAccountInformations
+            // 
+            this.flowlayAccountInformations.Controls.Add(this.lblUserIdNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblUserId);
+            this.flowlayAccountInformations.Controls.Add(this.lblUridiumNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblUridium);
+            this.flowlayAccountInformations.Controls.Add(this.lblCreditsNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblCredits);
+            this.flowlayAccountInformations.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowlayAccountInformations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowlayAccountInformations.Location = new System.Drawing.Point(3, 16);
+            this.flowlayAccountInformations.Name = "flowlayAccountInformations";
+            this.flowlayAccountInformations.Size = new System.Drawing.Size(564, 141);
+            this.flowlayAccountInformations.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,8 +308,9 @@
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             this.pnlAccountInformation.ResumeLayout(false);
-            this.pnlAccountInformation.PerformLayout();
             this.pnlAccounts.ResumeLayout(false);
+            this.flowlayAccountInformations.ResumeLayout(false);
+            this.flowlayAccountInformations.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -324,6 +339,7 @@
         private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.Label lblCreditsNOEDIT;
         private System.Windows.Forms.Label lblCredits;
+        private System.Windows.Forms.FlowLayoutPanel flowlayAccountInformations;
     }
 }
 
