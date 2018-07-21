@@ -74,6 +74,11 @@ namespace do_account_checker
             lblHonor.Text = honor;
         }
 
+        public void SetRank(string rank, Image rankImage)
+        {
+            lblRank.Text = rank;
+        }
+
         public void AddToList(User[] users)
         {
             foreach (var user in users)

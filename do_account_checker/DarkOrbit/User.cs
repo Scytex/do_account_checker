@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Net;
 using System.Windows.Forms;
 using do_account_checker.Extensions;
@@ -53,6 +55,11 @@ namespace do_account_checker.DarkOrbit
         public string Experience => _content.GetBetween("header_top_exp", "</div>").GetBetween("<span>", "</span>");
 
         public string Honor => _content.GetBetween("header_top_hnr", "</div>").GetBetween("<span>", "</span>");
+
+        public string Rank => _content.GetBetween("userRankIcon", "</div>").GetBetween(">", "\n").Remove(0,1);
+
+        public Image RankImage => Image.FromStream(new MemoryStream(
+            new WebClient().DownloadData("https://darkorbit-22.bpsecure.com/do_img/global/ranks/rank_1.png")));
 
         public string CollectDaily()
         {

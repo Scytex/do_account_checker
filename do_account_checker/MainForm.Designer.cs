@@ -64,6 +64,8 @@
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnDailyStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columPlaceholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblRankNOEDIT = new System.Windows.Forms.Label();
+            this.lblRank = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.flowlayAccountInformations.SuspendLayout();
@@ -185,6 +187,8 @@
             this.flowlayAccountInformations.Controls.Add(this.lblExperience);
             this.flowlayAccountInformations.Controls.Add(this.lblHonorNOEDIT);
             this.flowlayAccountInformations.Controls.Add(this.lblHonor);
+            this.flowlayAccountInformations.Controls.Add(this.lblRankNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblRank);
             this.flowlayAccountInformations.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowlayAccountInformations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowlayAccountInformations.Location = new System.Drawing.Point(3, 16);
@@ -353,7 +357,7 @@
             // btnCollectAll
             // 
             this.btnCollectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCollectAll.Location = new System.Drawing.Point(296, 231);
+            this.btnCollectAll.Location = new System.Drawing.Point(376, 231);
             this.btnCollectAll.Name = "btnCollectAll";
             this.btnCollectAll.Size = new System.Drawing.Size(93, 23);
             this.btnCollectAll.TabIndex = 4;
@@ -365,17 +369,17 @@
             // 
             this.btnLoginAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLoginAll.Enabled = false;
-            this.btnLoginAll.Location = new System.Drawing.Point(215, 231);
+            this.btnLoginAll.Location = new System.Drawing.Point(263, 231);
             this.btnLoginAll.Name = "btnLoginAll";
-            this.btnLoginAll.Size = new System.Drawing.Size(75, 23);
+            this.btnLoginAll.Size = new System.Drawing.Size(107, 23);
             this.btnLoginAll.TabIndex = 3;
-            this.btnLoginAll.Text = "Login All";
+            this.btnLoginAll.Text = "Account Info All";
             this.btnLoginAll.UseVisualStyleBackColor = true;
             // 
             // btnCollect
             // 
             this.btnCollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCollect.Location = new System.Drawing.Point(90, 231);
+            this.btnCollect.Location = new System.Drawing.Point(100, 231);
             this.btnCollect.Name = "btnCollect";
             this.btnCollect.Size = new System.Drawing.Size(104, 23);
             this.btnCollect.TabIndex = 2;
@@ -388,9 +392,9 @@
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLogin.Location = new System.Drawing.Point(9, 231);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(85, 23);
             this.btnLogin.TabIndex = 1;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Account Info";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
@@ -435,6 +439,25 @@
             // 
             this.columPlaceholder.Text = "";
             this.columPlaceholder.Width = 538;
+            // 
+            // lblRankNOEDIT
+            // 
+            this.lblRankNOEDIT.AutoSize = true;
+            this.lblRankNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRankNOEDIT.Location = new System.Drawing.Point(59, 52);
+            this.lblRankNOEDIT.Name = "lblRankNOEDIT";
+            this.lblRankNOEDIT.Size = new System.Drawing.Size(37, 13);
+            this.lblRankNOEDIT.TabIndex = 14;
+            this.lblRankNOEDIT.Text = "Rank";
+            // 
+            // lblRank
+            // 
+            this.lblRank.AutoSize = true;
+            this.lblRank.Location = new System.Drawing.Point(59, 65);
+            this.lblRank.Name = "lblRank";
+            this.lblRank.Size = new System.Drawing.Size(0, 13);
+            this.lblRank.TabIndex = 16;
+            this.lblRank.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MainForm
             // 
@@ -494,6 +517,8 @@
         private System.Windows.Forms.Label lblHonorNOEDIT;
         private System.Windows.Forms.Label lblHonor;
         private System.Windows.Forms.ColumnHeader columnDailyStatus;
+        private System.Windows.Forms.Label lblRankNOEDIT;
+        private System.Windows.Forms.Label lblRank;
     }
 }
 
