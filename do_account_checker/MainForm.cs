@@ -49,6 +49,16 @@ namespace do_account_checker
             lblCredits.Text = credits;
         }
 
+        public void SetServer(string server)
+        {
+            lblServer.Text = server;
+        }
+
+        public void SetLevel(string level)
+        {
+            lblLevel.Text = level;
+        }
+
         public void AddToList(User[] users)
         {
             foreach (var user in users)

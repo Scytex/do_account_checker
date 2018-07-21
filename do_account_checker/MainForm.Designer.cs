@@ -55,6 +55,10 @@
             this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columPlaceholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblServerNOEDIT = new System.Windows.Forms.Label();
+            this.lblServer = new System.Windows.Forms.Label();
+            this.lblLevelNOEDIT = new System.Windows.Forms.Label();
+            this.lblLevel = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.flowlayAccountInformations.SuspendLayout();
@@ -164,10 +168,14 @@
             // 
             this.flowlayAccountInformations.Controls.Add(this.lblUserIdNOEDIT);
             this.flowlayAccountInformations.Controls.Add(this.lblUserId);
+            this.flowlayAccountInformations.Controls.Add(this.lblServerNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblServer);
             this.flowlayAccountInformations.Controls.Add(this.lblUridiumNOEDIT);
             this.flowlayAccountInformations.Controls.Add(this.lblUridium);
             this.flowlayAccountInformations.Controls.Add(this.lblCreditsNOEDIT);
             this.flowlayAccountInformations.Controls.Add(this.lblCredits);
+            this.flowlayAccountInformations.Controls.Add(this.lblLevelNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblLevel);
             this.flowlayAccountInformations.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowlayAccountInformations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowlayAccountInformations.Location = new System.Drawing.Point(3, 16);
@@ -178,11 +186,12 @@
             // lblUserIdNOEDIT
             // 
             this.lblUserIdNOEDIT.AutoSize = true;
+            this.lblUserIdNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserIdNOEDIT.Location = new System.Drawing.Point(3, 0);
             this.lblUserIdNOEDIT.Name = "lblUserIdNOEDIT";
-            this.lblUserIdNOEDIT.Size = new System.Drawing.Size(46, 13);
+            this.lblUserIdNOEDIT.Size = new System.Drawing.Size(50, 13);
             this.lblUserIdNOEDIT.TabIndex = 0;
-            this.lblUserIdNOEDIT.Text = "User ID:";
+            this.lblUserIdNOEDIT.Text = "User ID";
             // 
             // lblUserId
             // 
@@ -195,36 +204,38 @@
             // lblUridiumNOEDIT
             // 
             this.lblUridiumNOEDIT.AutoSize = true;
-            this.lblUridiumNOEDIT.Location = new System.Drawing.Point(3, 26);
+            this.lblUridiumNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUridiumNOEDIT.Location = new System.Drawing.Point(3, 52);
             this.lblUridiumNOEDIT.Name = "lblUridiumNOEDIT";
-            this.lblUridiumNOEDIT.Size = new System.Drawing.Size(45, 13);
-            this.lblUridiumNOEDIT.TabIndex = 2;
-            this.lblUridiumNOEDIT.Text = "Uridium:";
+            this.lblUridiumNOEDIT.Size = new System.Drawing.Size(49, 13);
+            this.lblUridiumNOEDIT.TabIndex = 4;
+            this.lblUridiumNOEDIT.Text = "Uridium";
             // 
             // lblUridium
             // 
             this.lblUridium.AutoSize = true;
-            this.lblUridium.Location = new System.Drawing.Point(3, 39);
+            this.lblUridium.Location = new System.Drawing.Point(3, 65);
             this.lblUridium.Name = "lblUridium";
             this.lblUridium.Size = new System.Drawing.Size(0, 13);
-            this.lblUridium.TabIndex = 3;
+            this.lblUridium.TabIndex = 5;
             // 
             // lblCreditsNOEDIT
             // 
             this.lblCreditsNOEDIT.AutoSize = true;
-            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(3, 52);
+            this.lblCreditsNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(3, 78);
             this.lblCreditsNOEDIT.Name = "lblCreditsNOEDIT";
-            this.lblCreditsNOEDIT.Size = new System.Drawing.Size(42, 13);
-            this.lblCreditsNOEDIT.TabIndex = 4;
-            this.lblCreditsNOEDIT.Text = "Credits:";
+            this.lblCreditsNOEDIT.Size = new System.Drawing.Size(46, 13);
+            this.lblCreditsNOEDIT.TabIndex = 6;
+            this.lblCreditsNOEDIT.Text = "Credits";
             // 
             // lblCredits
             // 
             this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(3, 65);
+            this.lblCredits.Location = new System.Drawing.Point(3, 91);
             this.lblCredits.Name = "lblCredits";
             this.lblCredits.Size = new System.Drawing.Size(0, 13);
-            this.lblCredits.TabIndex = 5;
+            this.lblCredits.TabIndex = 7;
             // 
             // pnlAccounts
             // 
@@ -332,6 +343,43 @@
             this.columPlaceholder.Text = "";
             this.columPlaceholder.Width = 666;
             // 
+            // lblServerNOEDIT
+            // 
+            this.lblServerNOEDIT.AutoSize = true;
+            this.lblServerNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerNOEDIT.Location = new System.Drawing.Point(3, 26);
+            this.lblServerNOEDIT.Name = "lblServerNOEDIT";
+            this.lblServerNOEDIT.Size = new System.Drawing.Size(44, 13);
+            this.lblServerNOEDIT.TabIndex = 2;
+            this.lblServerNOEDIT.Text = "Server";
+            // 
+            // lblServer
+            // 
+            this.lblServer.AutoSize = true;
+            this.lblServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServer.Location = new System.Drawing.Point(3, 39);
+            this.lblServer.Name = "lblServer";
+            this.lblServer.Size = new System.Drawing.Size(0, 13);
+            this.lblServer.TabIndex = 3;
+            // 
+            // lblLevelNOEDIT
+            // 
+            this.lblLevelNOEDIT.AutoSize = true;
+            this.lblLevelNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelNOEDIT.Location = new System.Drawing.Point(3, 104);
+            this.lblLevelNOEDIT.Name = "lblLevelNOEDIT";
+            this.lblLevelNOEDIT.Size = new System.Drawing.Size(38, 13);
+            this.lblLevelNOEDIT.TabIndex = 8;
+            this.lblLevelNOEDIT.Text = "Level";
+            // 
+            // lblLevel
+            // 
+            this.lblLevel.AutoSize = true;
+            this.lblLevel.Location = new System.Drawing.Point(3, 117);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(0, 13);
+            this.lblLevel.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +429,10 @@
         private System.Windows.Forms.ColumnHeader columnStatus;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.ColumnHeader columPlaceholder;
+        private System.Windows.Forms.Label lblServerNOEDIT;
+        private System.Windows.Forms.Label lblServer;
+        private System.Windows.Forms.Label lblLevelNOEDIT;
+        private System.Windows.Forms.Label lblLevel;
     }
 }
 

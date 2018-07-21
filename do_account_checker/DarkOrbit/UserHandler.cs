@@ -8,8 +8,13 @@ namespace do_account_checker.DarkOrbit
     public class UserHandler
     {
         private const char Seperator = (char) 11;
-        private List<User> _users;
+        private readonly List<User> _users;
         public User[] Users => _users.ToArray();
+
+        public UserHandler()
+        {
+            _users = LoadFromDisc();
+        }
 
         public void Add(User user)
         {
@@ -48,11 +53,6 @@ namespace do_account_checker.DarkOrbit
             }
 
             return users;
-        }
-
-        public UserHandler()
-        {
-            _users = LoadFromDisc();
         }
     }
 }

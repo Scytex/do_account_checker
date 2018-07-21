@@ -59,6 +59,8 @@ namespace do_account_checker.GUI
             _form.SetUridium(user.Uridium);
             _form.SetUserId(user.UserId);
             _form.SetCredits(user.Credits);
+            _form.SetServer(user.Server);
+            _form.SetLevel(user.Level);
         }
     }
 }

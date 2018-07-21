@@ -2,6 +2,7 @@
 using System.Net;
 using do_account_checker.Extensions;
 using do_account_checker.Http;
+using RestSharp.Extensions;
 
 namespace do_account_checker.DarkOrbit
 {
@@ -11,6 +12,7 @@ namespace do_account_checker.DarkOrbit
         public string Password { get; }
         private readonly WebRequestHandler _webRequestHandler = new WebRequestHandler();
         private string _content = "";
+        private string _uri = "";
         public User(string username, string password)
         {
             Password = password;
@@ -40,6 +42,11 @@ namespace do_account_checker.DarkOrbit
 
         public string Credits => _content.GetBetween("class=\"header_money\">", "</div>").Trim();
 
+        public string Server => _uri.GetBetween("//", ".");
+
+        public string Level =>
+            _content.GetBetween("header_top_level", "header_top_hnr").GetBetween("<span>", "</span>");
+
         public bool Login()
         {
             var mainPage = _webRequestHandler.Get("https://www.darkorbit.com").Content;
@@ -47,7 +54,8 @@ namespace do_account_checker.DarkOrbit
 
             var response = _webRequestHandler.Post(authUrl, new KeyValuePair<string, object>("username", Username), new KeyValuePair<string, object>("password", Password));
             _content = response.Content;
-            return response.ResponseUri.AbsoluteUri.Contains("indexInternal.es");
+            _uri = response.ResponseUri.AbsoluteUri;
+            return _uri.Contains("indexInternal.es");
         }
     }
 }
