@@ -43,6 +43,7 @@ namespace do_account_checker.DarkOrbit
             }
             catch (Exception)
             {
+                //TODO handle exception
                 // File doesn't exist or whatever
             }
 

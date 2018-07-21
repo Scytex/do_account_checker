@@ -50,7 +50,8 @@ namespace do_account_checker
             {
                 AddToList(user.Username);
             }
-            //listAccounts.Columns[0].Width = -1; //Resize column to longest username
+            listAccounts.Columns[0].Width = -1; //Resize column to longest username
+            listAccounts.Columns[0].Width = listAccounts.Columns[0].Width < 60 ? 60 : -1;
         }
 
         private void AddToList(string item)
@@ -75,6 +76,12 @@ namespace do_account_checker
         private void BtnSingleLogin_Click(object sender, EventArgs e)
         {
             _guiHandler.Login(txtUsername.Text, txtPassword.Text, false);
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            var index = listAccounts.Items.IndexOf(listAccounts.SelectedItems[0]); //TODO SelectedIndices?
+            _guiHandler.LoginSelected(index);
         }
     }
 }

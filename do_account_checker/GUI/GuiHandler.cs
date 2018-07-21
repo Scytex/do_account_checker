@@ -13,6 +13,11 @@ namespace do_account_checker.GUI
             _userHandler = new UserHandler();
             LoadAccounts();
         }
+        public void LoginSelected(int index)
+        {
+            var user = _userHandler.Users[index];
+            Login(user.Username, user.Password, false);
+        }
 
         public void Login(string username, string password, bool saveCredentials)
         {
