@@ -62,8 +62,8 @@
             this.listAccounts = new System.Windows.Forms.ListView();
             this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columPlaceholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnDailyStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columPlaceholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.flowlayAccountInformations.SuspendLayout();
@@ -353,13 +353,13 @@
             // btnCollectAll
             // 
             this.btnCollectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCollectAll.Enabled = false;
             this.btnCollectAll.Location = new System.Drawing.Point(296, 231);
             this.btnCollectAll.Name = "btnCollectAll";
             this.btnCollectAll.Size = new System.Drawing.Size(93, 23);
             this.btnCollectAll.TabIndex = 4;
             this.btnCollectAll.Text = "Collect Daily All";
             this.btnCollectAll.UseVisualStyleBackColor = true;
+            this.btnCollectAll.Click += new System.EventHandler(this.BtnCollectAll_Click);
             // 
             // btnLoginAll
             // 
@@ -425,16 +425,16 @@
             this.columnStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnStatus.Width = 71;
             // 
-            // columPlaceholder
-            // 
-            this.columPlaceholder.Text = "";
-            this.columPlaceholder.Width = 538;
-            // 
             // columnDailyStatus
             // 
             this.columnDailyStatus.Text = "Daily Status";
             this.columnDailyStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnDailyStatus.Width = 86;
+            // 
+            // columPlaceholder
+            // 
+            this.columPlaceholder.Text = "";
+            this.columPlaceholder.Width = 538;
             // 
             // MainForm
             // 

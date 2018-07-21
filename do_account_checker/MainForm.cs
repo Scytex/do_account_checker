@@ -125,5 +125,10 @@ namespace do_account_checker
             var index = listAccounts.Items.IndexOf(listAccounts.SelectedItems[0]);
             _guiHandler.CollectDailySelected(index);
         }
+
+        private void BtnCollectAll_Click(object sender, EventArgs e)
+        {
+            _guiHandler.CollectDailyAll();
+        }
     }
 }

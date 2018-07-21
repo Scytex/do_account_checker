@@ -71,5 +71,16 @@ namespace do_account_checker.GUI
             var status = user.CollectDaily();
             _form.SetDailyStatusList(status, index);
         }
+
+        public void CollectDailyAll()
+        {
+            var index = 0;
+            foreach (var user in _userHandler.Users)
+            {
+                var status = user.CollectDaily();
+                _form.SetDailyStatusList(status, index);
+                index++;
+            }
+        }
     }
 }
