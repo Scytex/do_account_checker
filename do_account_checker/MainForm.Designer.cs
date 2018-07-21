@@ -38,26 +38,27 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pnlAccountInformation = new System.Windows.Forms.GroupBox();
-            this.lblCredits = new System.Windows.Forms.Label();
-            this.lblCreditsNOEDIT = new System.Windows.Forms.Label();
-            this.lblUserId = new System.Windows.Forms.Label();
+            this.flowlayAccountInformations = new System.Windows.Forms.FlowLayoutPanel();
             this.lblUserIdNOEDIT = new System.Windows.Forms.Label();
-            this.lblUridium = new System.Windows.Forms.Label();
+            this.lblUserId = new System.Windows.Forms.Label();
             this.lblUridiumNOEDIT = new System.Windows.Forms.Label();
+            this.lblUridium = new System.Windows.Forms.Label();
+            this.lblCreditsNOEDIT = new System.Windows.Forms.Label();
+            this.lblCredits = new System.Windows.Forms.Label();
             this.pnlAccounts = new System.Windows.Forms.GroupBox();
+            this.btnReload = new System.Windows.Forms.Button();
             this.btnCollectAll = new System.Windows.Forms.Button();
             this.btnLoginAll = new System.Windows.Forms.Button();
             this.btnCollect = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.listAccounts = new System.Windows.Forms.ListView();
-            this.flowlayAccountInformations = new System.Windows.Forms.FlowLayoutPanel();
             this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnReload = new System.Windows.Forms.Button();
+            this.columPlaceholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
-            this.pnlAccounts.SuspendLayout();
             this.flowlayAccountInformations.SuspendLayout();
+            this.pnlAccounts.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLogin
@@ -111,7 +112,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(115, 20);
             this.txtPassword.TabIndex = 3;
-            this.txtPassword.Text = "Ctest2018";
             // 
             // btnAddAccount
             // 
@@ -129,7 +129,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(115, 20);
             this.txtUsername.TabIndex = 2;
-            this.txtUsername.Text = "ctest2018";
             // 
             // lblPassword
             // 
@@ -161,30 +160,20 @@
             this.pnlAccountInformation.TabStop = false;
             this.pnlAccountInformation.Text = "Account Information";
             // 
-            // lblCredits
+            // flowlayAccountInformations
             // 
-            this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(3, 65);
-            this.lblCredits.Name = "lblCredits";
-            this.lblCredits.Size = new System.Drawing.Size(0, 13);
-            this.lblCredits.TabIndex = 5;
-            // 
-            // lblCreditsNOEDIT
-            // 
-            this.lblCreditsNOEDIT.AutoSize = true;
-            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(3, 52);
-            this.lblCreditsNOEDIT.Name = "lblCreditsNOEDIT";
-            this.lblCreditsNOEDIT.Size = new System.Drawing.Size(42, 13);
-            this.lblCreditsNOEDIT.TabIndex = 4;
-            this.lblCreditsNOEDIT.Text = "Credits:";
-            // 
-            // lblUserId
-            // 
-            this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(3, 13);
-            this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(0, 13);
-            this.lblUserId.TabIndex = 1;
+            this.flowlayAccountInformations.Controls.Add(this.lblUserIdNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblUserId);
+            this.flowlayAccountInformations.Controls.Add(this.lblUridiumNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblUridium);
+            this.flowlayAccountInformations.Controls.Add(this.lblCreditsNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.lblCredits);
+            this.flowlayAccountInformations.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowlayAccountInformations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowlayAccountInformations.Location = new System.Drawing.Point(3, 16);
+            this.flowlayAccountInformations.Name = "flowlayAccountInformations";
+            this.flowlayAccountInformations.Size = new System.Drawing.Size(564, 141);
+            this.flowlayAccountInformations.TabIndex = 6;
             // 
             // lblUserIdNOEDIT
             // 
@@ -195,13 +184,13 @@
             this.lblUserIdNOEDIT.TabIndex = 0;
             this.lblUserIdNOEDIT.Text = "User ID:";
             // 
-            // lblUridium
+            // lblUserId
             // 
-            this.lblUridium.AutoSize = true;
-            this.lblUridium.Location = new System.Drawing.Point(3, 39);
-            this.lblUridium.Name = "lblUridium";
-            this.lblUridium.Size = new System.Drawing.Size(0, 13);
-            this.lblUridium.TabIndex = 3;
+            this.lblUserId.AutoSize = true;
+            this.lblUserId.Location = new System.Drawing.Point(3, 13);
+            this.lblUserId.Name = "lblUserId";
+            this.lblUserId.Size = new System.Drawing.Size(0, 13);
+            this.lblUserId.TabIndex = 1;
             // 
             // lblUridiumNOEDIT
             // 
@@ -211,6 +200,31 @@
             this.lblUridiumNOEDIT.Size = new System.Drawing.Size(45, 13);
             this.lblUridiumNOEDIT.TabIndex = 2;
             this.lblUridiumNOEDIT.Text = "Uridium:";
+            // 
+            // lblUridium
+            // 
+            this.lblUridium.AutoSize = true;
+            this.lblUridium.Location = new System.Drawing.Point(3, 39);
+            this.lblUridium.Name = "lblUridium";
+            this.lblUridium.Size = new System.Drawing.Size(0, 13);
+            this.lblUridium.TabIndex = 3;
+            // 
+            // lblCreditsNOEDIT
+            // 
+            this.lblCreditsNOEDIT.AutoSize = true;
+            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(3, 52);
+            this.lblCreditsNOEDIT.Name = "lblCreditsNOEDIT";
+            this.lblCreditsNOEDIT.Size = new System.Drawing.Size(42, 13);
+            this.lblCreditsNOEDIT.TabIndex = 4;
+            this.lblCreditsNOEDIT.Text = "Credits:";
+            // 
+            // lblCredits
+            // 
+            this.lblCredits.AutoSize = true;
+            this.lblCredits.Location = new System.Drawing.Point(3, 65);
+            this.lblCredits.Name = "lblCredits";
+            this.lblCredits.Size = new System.Drawing.Size(0, 13);
+            this.lblCredits.TabIndex = 5;
             // 
             // pnlAccounts
             // 
@@ -229,6 +243,18 @@
             this.pnlAccounts.TabIndex = 4;
             this.pnlAccounts.TabStop = false;
             this.pnlAccounts.Text = "Accounts";
+            // 
+            // btnReload
+            // 
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.Location = new System.Drawing.Point(694, 231);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(70, 23);
+            this.btnReload.TabIndex = 5;
+            this.btnReload.Text = "⭮ Reload";
+            this.btnReload.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReload.UseVisualStyleBackColor = true;
             // 
             // btnCollectAll
             // 
@@ -278,7 +304,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnUsername,
-            this.columnStatus});
+            this.columnStatus,
+            this.columPlaceholder});
             this.listAccounts.FullRowSelect = true;
             this.listAccounts.GridLines = true;
             this.listAccounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -290,21 +317,6 @@
             this.listAccounts.UseCompatibleStateImageBehavior = false;
             this.listAccounts.View = System.Windows.Forms.View.Details;
             // 
-            // flowlayAccountInformations
-            // 
-            this.flowlayAccountInformations.Controls.Add(this.lblUserIdNOEDIT);
-            this.flowlayAccountInformations.Controls.Add(this.lblUserId);
-            this.flowlayAccountInformations.Controls.Add(this.lblUridiumNOEDIT);
-            this.flowlayAccountInformations.Controls.Add(this.lblUridium);
-            this.flowlayAccountInformations.Controls.Add(this.lblCreditsNOEDIT);
-            this.flowlayAccountInformations.Controls.Add(this.lblCredits);
-            this.flowlayAccountInformations.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowlayAccountInformations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowlayAccountInformations.Location = new System.Drawing.Point(3, 16);
-            this.flowlayAccountInformations.Name = "flowlayAccountInformations";
-            this.flowlayAccountInformations.Size = new System.Drawing.Size(564, 141);
-            this.flowlayAccountInformations.TabIndex = 6;
-            // 
             // columnUsername
             // 
             this.columnUsername.Text = "Username";
@@ -312,19 +324,13 @@
             // columnStatus
             // 
             this.columnStatus.Text = "Login Status";
-            this.columnStatus.Width = 691;
+            this.columnStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnStatus.Width = 71;
             // 
-            // btnReload
+            // columPlaceholder
             // 
-            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(694, 231);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(70, 23);
-            this.btnReload.TabIndex = 5;
-            this.btnReload.Text = "⭮ Reload";
-            this.btnReload.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReload.UseVisualStyleBackColor = true;
+            this.columPlaceholder.Text = "";
+            this.columPlaceholder.Width = 666;
             // 
             // MainForm
             // 
@@ -339,9 +345,9 @@
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             this.pnlAccountInformation.ResumeLayout(false);
-            this.pnlAccounts.ResumeLayout(false);
             this.flowlayAccountInformations.ResumeLayout(false);
             this.flowlayAccountInformations.PerformLayout();
+            this.pnlAccounts.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -374,6 +380,7 @@
         private System.Windows.Forms.ColumnHeader columnUsername;
         private System.Windows.Forms.ColumnHeader columnStatus;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.ColumnHeader columPlaceholder;
     }
 }
 

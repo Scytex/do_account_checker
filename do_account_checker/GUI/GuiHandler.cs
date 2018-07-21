@@ -16,7 +16,9 @@ namespace do_account_checker.GUI
         public void LoginSelected(int index)
         {
             var user = _userHandler.Users[index];
-            Login(user.Username, user.Password, false);
+            var status = LoginUser(user);
+
+            _form.SetLoginStatusList(status, index);
         }
 
         public void Login(string username, string password, bool saveCredentials)

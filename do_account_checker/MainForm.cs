@@ -29,6 +29,11 @@ namespace do_account_checker
             pnlStatus.BackColor = Color.Orange;
         }
 
+        public void SetLoginStatusList(bool status, int index)
+        {
+            listAccounts.Items[index].SubItems[1].Text = status ? "Successful" : "Failed";
+        }
+
         public void SetUridium(string uridium)
         {
             lblUridium.Text = uridium;
@@ -54,9 +59,10 @@ namespace do_account_checker
             listAccounts.Columns[0].Width = listAccounts.Columns[0].Width < 60 ? 60 : -1;
         }
 
-        private void AddToList(string item)
+        private void AddToList(string username, string status = "Idle")
         {
-            listAccounts.Items.Add(item);
+            string[] items = { username, status };
+            listAccounts.Items.Add(new ListViewItem(items));
         }
 
         public void ClearList()
