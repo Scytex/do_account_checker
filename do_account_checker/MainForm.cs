@@ -19,6 +19,11 @@ namespace do_account_checker
             pnlStatus.BackColor = status ? Color.Green : Color.Red;
         }
 
+        public void ResetLoginStatus()
+        {
+            pnlStatus.BackColor = Color.Orange;
+        }
+
         public void SetUridium(string uridium)
         {
             lblUridium.Text = uridium;
@@ -36,7 +41,12 @@ namespace do_account_checker
 
         private void BtnAddAccount_Click(object sender, EventArgs e)
         {
-            _guiHandler.AddAccount(txtUsername.Text, txtPassword.Text);
+            _guiHandler.Login(txtUsername.Text, txtPassword.Text, true);
+        }
+
+        private void BtnSingleLogin_Click(object sender, EventArgs e)
+        {
+            _guiHandler.Login(txtUsername.Text, txtPassword.Text, false);
         }
     }
 }

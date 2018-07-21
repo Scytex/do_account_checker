@@ -12,21 +12,29 @@ namespace do_account_checker.GUI
             _form = form;
         }
 
-        public void AddAccount(string username, string password)
+        public void Login(string username, string password, bool saveCredentials)
         {
+            _form.ResetLoginStatus();
             _user = new User(username, password);
             var status = Login();
             _form.SetLoginStatus(status);
 
+            if (!status || !saveCredentials) return;
+            AddAccount();
         }
 
-        public bool Login()
+        private bool Login()
         {
             var status = _user.Login();
 
             if (status)
                 LoadAccountInformations();
             return status;
+        }
+
+        private void AddAccount()
+        {
+            
         }
 
         private void LoadAccountInformations()

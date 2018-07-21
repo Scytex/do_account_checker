@@ -38,6 +38,10 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pnlAccountInformation = new System.Windows.Forms.GroupBox();
+            this.lblCredits = new System.Windows.Forms.Label();
+            this.lblCreditsNOEDIT = new System.Windows.Forms.Label();
+            this.lblUserId = new System.Windows.Forms.Label();
+            this.lblUserIdNOEDIT = new System.Windows.Forms.Label();
             this.lblUridium = new System.Windows.Forms.Label();
             this.lblUridiumNOEDIT = new System.Windows.Forms.Label();
             this.pnlAccounts = new System.Windows.Forms.GroupBox();
@@ -46,10 +50,6 @@
             this.btnCollect = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.listAccounts = new System.Windows.Forms.ListView();
-            this.lblUserIdNOEDIT = new System.Windows.Forms.Label();
-            this.lblUserId = new System.Windows.Forms.Label();
-            this.lblCreditsNOEDIT = new System.Windows.Forms.Label();
-            this.lblCredits = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.pnlAccounts.SuspendLayout();
@@ -80,10 +80,11 @@
             this.btnSingleLogin.TabIndex = 6;
             this.btnSingleLogin.Text = "Login w/o adding";
             this.btnSingleLogin.UseVisualStyleBackColor = true;
+            this.btnSingleLogin.Click += new System.EventHandler(this.BtnSingleLogin_Click);
             // 
             // pnlStatus
             // 
-            this.pnlStatus.BackColor = System.Drawing.Color.White;
+            this.pnlStatus.BackColor = System.Drawing.Color.Orange;
             this.pnlStatus.Location = new System.Drawing.Point(79, 138);
             this.pnlStatus.Name = "pnlStatus";
             this.pnlStatus.Size = new System.Drawing.Size(115, 13);
@@ -158,6 +159,40 @@
             this.pnlAccountInformation.TabStop = false;
             this.pnlAccountInformation.Text = "Account Information";
             // 
+            // lblCredits
+            // 
+            this.lblCredits.AutoSize = true;
+            this.lblCredits.Location = new System.Drawing.Point(59, 75);
+            this.lblCredits.Name = "lblCredits";
+            this.lblCredits.Size = new System.Drawing.Size(0, 13);
+            this.lblCredits.TabIndex = 5;
+            // 
+            // lblCreditsNOEDIT
+            // 
+            this.lblCreditsNOEDIT.AutoSize = true;
+            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(6, 75);
+            this.lblCreditsNOEDIT.Name = "lblCreditsNOEDIT";
+            this.lblCreditsNOEDIT.Size = new System.Drawing.Size(42, 13);
+            this.lblCreditsNOEDIT.TabIndex = 4;
+            this.lblCreditsNOEDIT.Text = "Credits:";
+            // 
+            // lblUserId
+            // 
+            this.lblUserId.AutoSize = true;
+            this.lblUserId.Location = new System.Drawing.Point(59, 23);
+            this.lblUserId.Name = "lblUserId";
+            this.lblUserId.Size = new System.Drawing.Size(0, 13);
+            this.lblUserId.TabIndex = 1;
+            // 
+            // lblUserIdNOEDIT
+            // 
+            this.lblUserIdNOEDIT.AutoSize = true;
+            this.lblUserIdNOEDIT.Location = new System.Drawing.Point(6, 23);
+            this.lblUserIdNOEDIT.Name = "lblUserIdNOEDIT";
+            this.lblUserIdNOEDIT.Size = new System.Drawing.Size(46, 13);
+            this.lblUserIdNOEDIT.TabIndex = 0;
+            this.lblUserIdNOEDIT.Text = "User ID:";
+            // 
             // lblUridium
             // 
             this.lblUridium.AutoSize = true;
@@ -177,6 +212,9 @@
             // 
             // pnlAccounts
             // 
+            this.pnlAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAccounts.Controls.Add(this.btnCollectAll);
             this.pnlAccounts.Controls.Add(this.btnLoginAll);
             this.pnlAccounts.Controls.Add(this.btnCollect);
@@ -191,6 +229,7 @@
             // 
             // btnCollectAll
             // 
+            this.btnCollectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCollectAll.Location = new System.Drawing.Point(296, 231);
             this.btnCollectAll.Name = "btnCollectAll";
             this.btnCollectAll.Size = new System.Drawing.Size(93, 23);
@@ -200,6 +239,7 @@
             // 
             // btnLoginAll
             // 
+            this.btnLoginAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLoginAll.Location = new System.Drawing.Point(215, 231);
             this.btnLoginAll.Name = "btnLoginAll";
             this.btnLoginAll.Size = new System.Drawing.Size(75, 23);
@@ -209,6 +249,7 @@
             // 
             // btnCollect
             // 
+            this.btnCollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCollect.Location = new System.Drawing.Point(90, 231);
             this.btnCollect.Name = "btnCollect";
             this.btnCollect.Size = new System.Drawing.Size(104, 23);
@@ -218,6 +259,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLogin.Location = new System.Drawing.Point(9, 231);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
@@ -227,46 +269,17 @@
             // 
             // listAccounts
             // 
+            this.listAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listAccounts.FullRowSelect = true;
+            this.listAccounts.GridLines = true;
             this.listAccounts.Location = new System.Drawing.Point(0, 19);
             this.listAccounts.Name = "listAccounts";
             this.listAccounts.Size = new System.Drawing.Size(764, 206);
             this.listAccounts.TabIndex = 0;
             this.listAccounts.UseCompatibleStateImageBehavior = false;
             this.listAccounts.View = System.Windows.Forms.View.List;
-            // 
-            // lblUserIdNOEDIT
-            // 
-            this.lblUserIdNOEDIT.AutoSize = true;
-            this.lblUserIdNOEDIT.Location = new System.Drawing.Point(6, 23);
-            this.lblUserIdNOEDIT.Name = "lblUserIdNOEDIT";
-            this.lblUserIdNOEDIT.Size = new System.Drawing.Size(46, 13);
-            this.lblUserIdNOEDIT.TabIndex = 0;
-            this.lblUserIdNOEDIT.Text = "User ID:";
-            // 
-            // lblUserId
-            // 
-            this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(59, 23);
-            this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(0, 13);
-            this.lblUserId.TabIndex = 1;
-            // 
-            // lblCreditsNOEDIT
-            // 
-            this.lblCreditsNOEDIT.AutoSize = true;
-            this.lblCreditsNOEDIT.Location = new System.Drawing.Point(6, 75);
-            this.lblCreditsNOEDIT.Name = "lblCreditsNOEDIT";
-            this.lblCreditsNOEDIT.Size = new System.Drawing.Size(42, 13);
-            this.lblCreditsNOEDIT.TabIndex = 4;
-            this.lblCreditsNOEDIT.Text = "Credits:";
-            // 
-            // lblCredits
-            // 
-            this.lblCredits.AutoSize = true;
-            this.lblCredits.Location = new System.Drawing.Point(59, 75);
-            this.lblCredits.Name = "lblCredits";
-            this.lblCredits.Size = new System.Drawing.Size(0, 13);
-            this.lblCredits.TabIndex = 5;
             // 
             // MainForm
             // 
