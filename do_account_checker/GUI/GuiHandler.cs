@@ -4,8 +4,8 @@ namespace do_account_checker.GUI
 {
     public class GuiHandler
     {
-        private User _user;
         private readonly MainForm _form;
+        private UserCollection _userCollec = new UserCollection();
 
         public GuiHandler(MainForm form)
         {
@@ -15,33 +15,41 @@ namespace do_account_checker.GUI
         public void Login(string username, string password, bool saveCredentials)
         {
             _form.ResetLoginStatus();
-            _user = new User(username, password);
-            var status = Login();
+            var user = new User(username, password);
+            var status = LoginUser(user);
             _form.SetLoginStatus(status);
 
             if (!status || !saveCredentials) return;
             AddAccount();
         }
 
-        private bool Login()
+        private bool LoginUser(User user)
         {
-            var status = _user.Login();
+            var status = user.Login();
 
             if (status)
-                LoadAccountInformations();
+                LoadAccountInformation(user);
             return status;
         }
 
         private void AddAccount()
         {
-            
+            //TODO Save information to File
+            LoadAccounts(); //Reload credentials
         }
 
-        private void LoadAccountInformations()
+        private void LoadAccounts()
         {
-            _form.SetUridium(_user.Uridium);
-            _form.SetUserId(_user.UserId);
-            _form.SetCredits(_user.Credits);
+            //TODO Clear items in List
+            //TODO Load information from File
+            _form.AddToList(_userCollec.Users);
+        }
+
+        private void LoadAccountInformation(User user)
+        {
+            _form.SetUridium(user.Uridium);
+            _form.SetUserId(user.UserId);
+            _form.SetCredits(user.Credits);
         }
     }
 }

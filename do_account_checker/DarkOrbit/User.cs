@@ -5,7 +5,7 @@ using do_account_checker.Http;
 
 namespace do_account_checker.DarkOrbit
 {
-    class User
+    public class User
     {
         public string Username { get; set; }
         private string Password { get; }

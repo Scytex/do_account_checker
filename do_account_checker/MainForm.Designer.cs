@@ -51,6 +51,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.listAccounts = new System.Windows.Forms.ListView();
             this.flowlayAccountInformations = new System.Windows.Forms.FlowLayoutPanel();
+            this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.pnlAccounts.SuspendLayout();
@@ -271,14 +273,19 @@
             this.listAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnUsername,
+            this.columnStatus});
             this.listAccounts.FullRowSelect = true;
             this.listAccounts.GridLines = true;
-            this.listAccounts.Location = new System.Drawing.Point(0, 19);
+            this.listAccounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listAccounts.Location = new System.Drawing.Point(9, 19);
+            this.listAccounts.MultiSelect = false;
             this.listAccounts.Name = "listAccounts";
-            this.listAccounts.Size = new System.Drawing.Size(764, 206);
+            this.listAccounts.Size = new System.Drawing.Size(755, 206);
             this.listAccounts.TabIndex = 0;
             this.listAccounts.UseCompatibleStateImageBehavior = false;
-            this.listAccounts.View = System.Windows.Forms.View.List;
+            this.listAccounts.View = System.Windows.Forms.View.Details;
             // 
             // flowlayAccountInformations
             // 
@@ -294,6 +301,15 @@
             this.flowlayAccountInformations.Name = "flowlayAccountInformations";
             this.flowlayAccountInformations.Size = new System.Drawing.Size(564, 141);
             this.flowlayAccountInformations.TabIndex = 6;
+            // 
+            // columnUsername
+            // 
+            this.columnUsername.Text = "Username";
+            // 
+            // columnStatus
+            // 
+            this.columnStatus.Text = "Login Status";
+            this.columnStatus.Width = 691;
             // 
             // MainForm
             // 
@@ -340,6 +356,8 @@
         private System.Windows.Forms.Label lblCreditsNOEDIT;
         private System.Windows.Forms.Label lblCredits;
         private System.Windows.Forms.FlowLayoutPanel flowlayAccountInformations;
+        private System.Windows.Forms.ColumnHeader columnUsername;
+        private System.Windows.Forms.ColumnHeader columnStatus;
     }
 }
 

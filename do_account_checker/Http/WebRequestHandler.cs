@@ -7,7 +7,7 @@ using RestSharp;
 
 namespace do_account_checker.Http
 {
-    internal class WebRequestHandler
+    public class WebRequestHandler
     {
         private readonly RestClient _client = new RestClient();
 
