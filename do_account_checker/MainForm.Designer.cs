@@ -41,10 +41,18 @@
             this.flowlayAccountInformations = new System.Windows.Forms.FlowLayoutPanel();
             this.lblUserIdNOEDIT = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
+            this.lblServerNOEDIT = new System.Windows.Forms.Label();
+            this.lblServer = new System.Windows.Forms.Label();
             this.lblUridiumNOEDIT = new System.Windows.Forms.Label();
             this.lblUridium = new System.Windows.Forms.Label();
             this.lblCreditsNOEDIT = new System.Windows.Forms.Label();
             this.lblCredits = new System.Windows.Forms.Label();
+            this.lblLevelNOEDIT = new System.Windows.Forms.Label();
+            this.lblLevel = new System.Windows.Forms.Label();
+            this.lblExperienceNOEDIT = new System.Windows.Forms.Label();
+            this.lblExperience = new System.Windows.Forms.Label();
+            this.lblHonorNOEDIT = new System.Windows.Forms.Label();
+            this.lblHonor = new System.Windows.Forms.Label();
             this.pnlAccounts = new System.Windows.Forms.GroupBox();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnCollectAll = new System.Windows.Forms.Button();
@@ -55,14 +63,7 @@
             this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columPlaceholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblServerNOEDIT = new System.Windows.Forms.Label();
-            this.lblServer = new System.Windows.Forms.Label();
-            this.lblLevelNOEDIT = new System.Windows.Forms.Label();
-            this.lblLevel = new System.Windows.Forms.Label();
-            this.lblExperienceNOEDIT = new System.Windows.Forms.Label();
-            this.lblExperience = new System.Windows.Forms.Label();
-            this.lblHonorNOEDIT = new System.Windows.Forms.Label();
-            this.lblHonor = new System.Windows.Forms.Label();
+            this.columnDailyStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.flowlayAccountInformations.SuspendLayout();
@@ -209,6 +210,25 @@
             this.lblUserId.Size = new System.Drawing.Size(0, 13);
             this.lblUserId.TabIndex = 1;
             // 
+            // lblServerNOEDIT
+            // 
+            this.lblServerNOEDIT.AutoSize = true;
+            this.lblServerNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerNOEDIT.Location = new System.Drawing.Point(3, 26);
+            this.lblServerNOEDIT.Name = "lblServerNOEDIT";
+            this.lblServerNOEDIT.Size = new System.Drawing.Size(44, 13);
+            this.lblServerNOEDIT.TabIndex = 2;
+            this.lblServerNOEDIT.Text = "Server";
+            // 
+            // lblServer
+            // 
+            this.lblServer.AutoSize = true;
+            this.lblServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServer.Location = new System.Drawing.Point(3, 39);
+            this.lblServer.Name = "lblServer";
+            this.lblServer.Size = new System.Drawing.Size(0, 13);
+            this.lblServer.TabIndex = 3;
+            // 
             // lblUridiumNOEDIT
             // 
             this.lblUridiumNOEDIT.AutoSize = true;
@@ -244,131 +264,6 @@
             this.lblCredits.Name = "lblCredits";
             this.lblCredits.Size = new System.Drawing.Size(0, 13);
             this.lblCredits.TabIndex = 7;
-            // 
-            // pnlAccounts
-            // 
-            this.pnlAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlAccounts.Controls.Add(this.btnReload);
-            this.pnlAccounts.Controls.Add(this.btnCollectAll);
-            this.pnlAccounts.Controls.Add(this.btnLoginAll);
-            this.pnlAccounts.Controls.Add(this.btnCollect);
-            this.pnlAccounts.Controls.Add(this.btnLogin);
-            this.pnlAccounts.Controls.Add(this.listAccounts);
-            this.pnlAccounts.Location = new System.Drawing.Point(12, 178);
-            this.pnlAccounts.Name = "pnlAccounts";
-            this.pnlAccounts.Size = new System.Drawing.Size(776, 260);
-            this.pnlAccounts.TabIndex = 4;
-            this.pnlAccounts.TabStop = false;
-            this.pnlAccounts.Text = "Accounts";
-            // 
-            // btnReload
-            // 
-            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(694, 231);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(70, 23);
-            this.btnReload.TabIndex = 5;
-            this.btnReload.Text = "⭮ Reload";
-            this.btnReload.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReload.UseVisualStyleBackColor = true;
-            // 
-            // btnCollectAll
-            // 
-            this.btnCollectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCollectAll.Location = new System.Drawing.Point(296, 231);
-            this.btnCollectAll.Name = "btnCollectAll";
-            this.btnCollectAll.Size = new System.Drawing.Size(93, 23);
-            this.btnCollectAll.TabIndex = 4;
-            this.btnCollectAll.Text = "Collect Daily All";
-            this.btnCollectAll.UseVisualStyleBackColor = true;
-            // 
-            // btnLoginAll
-            // 
-            this.btnLoginAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLoginAll.Location = new System.Drawing.Point(215, 231);
-            this.btnLoginAll.Name = "btnLoginAll";
-            this.btnLoginAll.Size = new System.Drawing.Size(75, 23);
-            this.btnLoginAll.TabIndex = 3;
-            this.btnLoginAll.Text = "Login All";
-            this.btnLoginAll.UseVisualStyleBackColor = true;
-            // 
-            // btnCollect
-            // 
-            this.btnCollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCollect.Location = new System.Drawing.Point(90, 231);
-            this.btnCollect.Name = "btnCollect";
-            this.btnCollect.Size = new System.Drawing.Size(104, 23);
-            this.btnCollect.TabIndex = 2;
-            this.btnCollect.Text = "Collect Daily Login";
-            this.btnCollect.UseVisualStyleBackColor = true;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLogin.Location = new System.Drawing.Point(9, 231);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 1;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
-            // 
-            // listAccounts
-            // 
-            this.listAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnUsername,
-            this.columnStatus,
-            this.columPlaceholder});
-            this.listAccounts.FullRowSelect = true;
-            this.listAccounts.GridLines = true;
-            this.listAccounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listAccounts.Location = new System.Drawing.Point(9, 19);
-            this.listAccounts.MultiSelect = false;
-            this.listAccounts.Name = "listAccounts";
-            this.listAccounts.Size = new System.Drawing.Size(755, 206);
-            this.listAccounts.TabIndex = 0;
-            this.listAccounts.UseCompatibleStateImageBehavior = false;
-            this.listAccounts.View = System.Windows.Forms.View.Details;
-            // 
-            // columnUsername
-            // 
-            this.columnUsername.Text = "Username";
-            // 
-            // columnStatus
-            // 
-            this.columnStatus.Text = "Login Status";
-            this.columnStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnStatus.Width = 71;
-            // 
-            // columPlaceholder
-            // 
-            this.columPlaceholder.Text = "";
-            this.columPlaceholder.Width = 666;
-            // 
-            // lblServerNOEDIT
-            // 
-            this.lblServerNOEDIT.AutoSize = true;
-            this.lblServerNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerNOEDIT.Location = new System.Drawing.Point(3, 26);
-            this.lblServerNOEDIT.Name = "lblServerNOEDIT";
-            this.lblServerNOEDIT.Size = new System.Drawing.Size(44, 13);
-            this.lblServerNOEDIT.TabIndex = 2;
-            this.lblServerNOEDIT.Text = "Server";
-            // 
-            // lblServer
-            // 
-            this.lblServer.AutoSize = true;
-            this.lblServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServer.Location = new System.Drawing.Point(3, 39);
-            this.lblServer.Name = "lblServer";
-            this.lblServer.Size = new System.Drawing.Size(0, 13);
-            this.lblServer.TabIndex = 3;
             // 
             // lblLevelNOEDIT
             // 
@@ -423,6 +318,123 @@
             this.lblHonor.Name = "lblHonor";
             this.lblHonor.Size = new System.Drawing.Size(0, 13);
             this.lblHonor.TabIndex = 13;
+            // 
+            // pnlAccounts
+            // 
+            this.pnlAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlAccounts.Controls.Add(this.btnReload);
+            this.pnlAccounts.Controls.Add(this.btnCollectAll);
+            this.pnlAccounts.Controls.Add(this.btnLoginAll);
+            this.pnlAccounts.Controls.Add(this.btnCollect);
+            this.pnlAccounts.Controls.Add(this.btnLogin);
+            this.pnlAccounts.Controls.Add(this.listAccounts);
+            this.pnlAccounts.Location = new System.Drawing.Point(12, 178);
+            this.pnlAccounts.Name = "pnlAccounts";
+            this.pnlAccounts.Size = new System.Drawing.Size(776, 260);
+            this.pnlAccounts.TabIndex = 4;
+            this.pnlAccounts.TabStop = false;
+            this.pnlAccounts.Text = "Accounts";
+            // 
+            // btnReload
+            // 
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.Location = new System.Drawing.Point(694, 231);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(70, 23);
+            this.btnReload.TabIndex = 5;
+            this.btnReload.Text = "⭮ Reload";
+            this.btnReload.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.BtnReload_Click);
+            // 
+            // btnCollectAll
+            // 
+            this.btnCollectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCollectAll.Enabled = false;
+            this.btnCollectAll.Location = new System.Drawing.Point(296, 231);
+            this.btnCollectAll.Name = "btnCollectAll";
+            this.btnCollectAll.Size = new System.Drawing.Size(93, 23);
+            this.btnCollectAll.TabIndex = 4;
+            this.btnCollectAll.Text = "Collect Daily All";
+            this.btnCollectAll.UseVisualStyleBackColor = true;
+            // 
+            // btnLoginAll
+            // 
+            this.btnLoginAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLoginAll.Enabled = false;
+            this.btnLoginAll.Location = new System.Drawing.Point(215, 231);
+            this.btnLoginAll.Name = "btnLoginAll";
+            this.btnLoginAll.Size = new System.Drawing.Size(75, 23);
+            this.btnLoginAll.TabIndex = 3;
+            this.btnLoginAll.Text = "Login All";
+            this.btnLoginAll.UseVisualStyleBackColor = true;
+            // 
+            // btnCollect
+            // 
+            this.btnCollect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCollect.Location = new System.Drawing.Point(90, 231);
+            this.btnCollect.Name = "btnCollect";
+            this.btnCollect.Size = new System.Drawing.Size(104, 23);
+            this.btnCollect.TabIndex = 2;
+            this.btnCollect.Text = "Collect Daily Login";
+            this.btnCollect.UseVisualStyleBackColor = true;
+            this.btnCollect.Click += new System.EventHandler(this.BtnCollect_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLogin.Location = new System.Drawing.Point(9, 231);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 1;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            // 
+            // listAccounts
+            // 
+            this.listAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnUsername,
+            this.columnStatus,
+            this.columnDailyStatus,
+            this.columPlaceholder});
+            this.listAccounts.FullRowSelect = true;
+            this.listAccounts.GridLines = true;
+            this.listAccounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listAccounts.Location = new System.Drawing.Point(9, 19);
+            this.listAccounts.MultiSelect = false;
+            this.listAccounts.Name = "listAccounts";
+            this.listAccounts.Size = new System.Drawing.Size(755, 206);
+            this.listAccounts.TabIndex = 0;
+            this.listAccounts.UseCompatibleStateImageBehavior = false;
+            this.listAccounts.View = System.Windows.Forms.View.Details;
+            // 
+            // columnUsername
+            // 
+            this.columnUsername.Text = "Username";
+            // 
+            // columnStatus
+            // 
+            this.columnStatus.Text = "Login Status";
+            this.columnStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnStatus.Width = 71;
+            // 
+            // columPlaceholder
+            // 
+            this.columPlaceholder.Text = "";
+            this.columPlaceholder.Width = 538;
+            // 
+            // columnDailyStatus
+            // 
+            this.columnDailyStatus.Text = "Daily Status";
+            this.columnDailyStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnDailyStatus.Width = 86;
             // 
             // MainForm
             // 
@@ -481,6 +493,7 @@
         private System.Windows.Forms.Label lblExperience;
         private System.Windows.Forms.Label lblHonorNOEDIT;
         private System.Windows.Forms.Label lblHonor;
+        private System.Windows.Forms.ColumnHeader columnDailyStatus;
     }
 }
 

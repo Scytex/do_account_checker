@@ -64,5 +64,12 @@ namespace do_account_checker.GUI
             _form.SetExperience(user.Experience);
             _form.SetHonor(user.Honor);
         }
+
+        public void CollectDailySelected(int index)
+        {
+            var user = _userHandler.Users[index];
+            var status = user.CollectDaily();
+            _form.SetDailyStatusList(status, index);
+        }
     }
 }

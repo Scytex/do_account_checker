@@ -34,6 +34,11 @@ namespace do_account_checker
             listAccounts.Items[index].SubItems[1].Text = status ? "Successful" : "Failed";
         }
 
+        public void SetDailyStatusList(string status, int index)
+        {
+            listAccounts.Items[index].SubItems[2].Text = status;
+        }
+
         public void SetUridium(string uridium)
         {
             lblUridium.Text = uridium;
@@ -76,12 +81,12 @@ namespace do_account_checker
                 AddToList(user.Username);
             }
             listAccounts.Columns[0].Width = -1; //Resize column to longest username
-            listAccounts.Columns[0].Width = listAccounts.Columns[0].Width < 60 ? 60 : -1;
+            listAccounts.Columns[0].Width = listAccounts.Columns[0].Width < 60 ? -2 : -1;
         }
 
         private void AddToList(string username, string status = "Idle")
         {
-            string[] items = { username, status };
+            string[] items = { username, status, ""};
             listAccounts.Items.Add(new ListViewItem(items));
         }
 
@@ -108,6 +113,17 @@ namespace do_account_checker
         {
             var index = listAccounts.Items.IndexOf(listAccounts.SelectedItems[0]); //TODO SelectedIndices?
             _guiHandler.LoginSelected(index);
+        }
+
+        private void BtnReload_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BtnCollect_Click(object sender, EventArgs e)
+        {
+            var index = listAccounts.Items.IndexOf(listAccounts.SelectedItems[0]);
+            _guiHandler.CollectDailySelected(index);
         }
     }
 }

@@ -9,7 +9,13 @@ namespace do_account_checker.Http
 {
     public class WebRequestHandler
     {
+        private CookieContainer _cookieContainer = new CookieContainer();
         private readonly RestClient _client = new RestClient();
+
+        public WebRequestHandler()
+        {
+            _client.CookieContainer = _cookieContainer;
+        }
 
         public IRestResponse Get(string url)
         {

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net;
+using System.Windows.Forms;
 using do_account_checker.Extensions;
 using do_account_checker.Http;
 using RestSharp.Extensions;
@@ -13,6 +14,8 @@ namespace do_account_checker.DarkOrbit
         private readonly WebRequestHandler _webRequestHandler = new WebRequestHandler();
         private string _content = "";
         private string _uri = "";
+        private bool _loggedIn = false;
+
         public User(string username, string password)
         {
             Password = password;
@@ -51,6 +54,23 @@ namespace do_account_checker.DarkOrbit
 
         public string Honor => _content.GetBetween("header_top_hnr", "</div>").GetBetween("<span>", "</span>");
 
+        public string CollectDaily()
+        {
+            if (!_loggedIn)
+                Login();
+            var response = _webRequestHandler.Get("https://" + Server + ".darkorbit.com/flashAPI/dailyLogin.php?doBook").Content;
+
+            switch (response)
+            {
+                case "{\"isError\":1,\"error\":{\"message\":\"Already booked today\"}}":
+                    return "Already booked";
+                case "{\"success\":true}":
+                    return "Booked";
+            }
+
+            return "Failed";
+        }
+
         public bool Login()
         {
             var mainPage = _webRequestHandler.Get("https://www.darkorbit.com").Content;
@@ -59,7 +79,9 @@ namespace do_account_checker.DarkOrbit
             var response = _webRequestHandler.Post(authUrl, new KeyValuePair<string, object>("username", Username), new KeyValuePair<string, object>("password", Password));
             _content = response.Content;
             _uri = response.ResponseUri.AbsoluteUri;
-            return _uri.Contains("indexInternal.es");
+            var status = _uri.Contains("indexInternal.es");
+            _loggedIn = status;
+            return status;
         }
     }
 }
