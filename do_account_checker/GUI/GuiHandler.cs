@@ -5,10 +5,13 @@ namespace do_account_checker.GUI
     public class GuiHandler
     {
         private readonly MainForm _form;
+        private UserHandler _userHandler;
 
         public GuiHandler(MainForm form)
         {
             _form = form;
+            _userHandler = new UserHandler();
+            LoadAccounts();
         }
 
         public void Login(string username, string password, bool saveCredentials)
@@ -19,7 +22,7 @@ namespace do_account_checker.GUI
             _form.SetLoginStatus(status);
 
             if (!status || !saveCredentials) return;
-            AddAccount();
+            AddAccount(user);
         }
 
         private bool LoginUser(User user)
@@ -31,17 +34,17 @@ namespace do_account_checker.GUI
             return status;
         }
 
-        private void AddAccount()
+        private void AddAccount(User user)
         {
-            //TODO Save information to File
+            _userHandler.Add(user);
             LoadAccounts(); //Reload credentials
         }
 
         private void LoadAccounts()
         {
             _form.ClearList();
-            var userCollec = new UserCollection();
-            _form.AddToList(userCollec.Users);
+            _userHandler = new UserHandler();
+            _form.AddToList(_userHandler.Users);
         }
 
         private void LoadAccountInformation(User user)

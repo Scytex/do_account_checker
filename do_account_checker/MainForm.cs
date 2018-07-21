@@ -50,7 +50,7 @@ namespace do_account_checker
             {
                 AddToList(user.Username);
             }
-            listAccounts.Columns[0].Width = -1; //Resize column to longest username
+            //listAccounts.Columns[0].Width = -1; //Resize column to longest username
         }
 
         private void AddToList(string item)
@@ -60,7 +60,7 @@ namespace do_account_checker
 
         public void ClearList()
         {
-            listAccounts.Clear();
+            listAccounts.Items.Clear();
         }
 
         /*

@@ -8,7 +8,7 @@ namespace do_account_checker.DarkOrbit
     public class User
     {
         public string Username { get; set; }
-        private string Password { get; }
+        public string Password { get; }
         private readonly WebRequestHandler _webRequestHandler = new WebRequestHandler();
         private string _content = "";
         public User(string username, string password)
