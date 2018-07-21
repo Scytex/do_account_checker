@@ -5,7 +5,6 @@ namespace do_account_checker.GUI
     public class GuiHandler
     {
         private readonly MainForm _form;
-        private UserCollection _userCollec = new UserCollection();
 
         public GuiHandler(MainForm form)
         {
@@ -40,9 +39,9 @@ namespace do_account_checker.GUI
 
         private void LoadAccounts()
         {
-            //TODO Clear items in List
-            //TODO Load information from File
-            _form.AddToList(_userCollec.Users);
+            _form.ClearList();
+            var userCollec = new UserCollection();
+            _form.AddToList(userCollec.Users);
         }
 
         private void LoadAccountInformation(User user)

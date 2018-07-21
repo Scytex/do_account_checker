@@ -53,6 +53,7 @@
             this.flowlayAccountInformations = new System.Windows.Forms.FlowLayoutPanel();
             this.columnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnReload = new System.Windows.Forms.Button();
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.pnlAccounts.SuspendLayout();
@@ -216,6 +217,7 @@
             this.pnlAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlAccounts.Controls.Add(this.btnReload);
             this.pnlAccounts.Controls.Add(this.btnCollectAll);
             this.pnlAccounts.Controls.Add(this.btnLoginAll);
             this.pnlAccounts.Controls.Add(this.btnCollect);
@@ -311,6 +313,17 @@
             this.columnStatus.Text = "Login Status";
             this.columnStatus.Width = 691;
             // 
+            // btnReload
+            // 
+            this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.Location = new System.Drawing.Point(694, 231);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(70, 23);
+            this.btnReload.TabIndex = 5;
+            this.btnReload.Text = "⭮ Reload";
+            this.btnReload.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReload.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +371,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowlayAccountInformations;
         private System.Windows.Forms.ColumnHeader columnUsername;
         private System.Windows.Forms.ColumnHeader columnStatus;
+        private System.Windows.Forms.Button btnReload;
     }
 }
 
