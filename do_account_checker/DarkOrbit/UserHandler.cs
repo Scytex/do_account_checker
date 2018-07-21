@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 
 namespace do_account_checker.DarkOrbit
 {
     public class UserHandler
     {
-        private List<User> users;
-        public User[] Users => users.ToArray();
+        private const char Seperator = (char) 11;
+        private List<User> _users;
+        public User[] Users => _users.ToArray();
 
         private void Add(User user)
         {
-            users.Add(user);
+            _users.Add(user);
             SaveToDisc();
         }
 
@@ -20,12 +22,25 @@ namespace do_account_checker.DarkOrbit
 
         private List<User> LoadFromDisc()
         {
-            
+            var users = new List<User>();
+            var accountText = File.ReadAllText("accounts.do");
+
+            using (var reader = new StringReader(accountText))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    var info = line.Split(Seperator);
+                    users.Add(new User(info[0], info[1]));
+                }
+            }
+
+            return users;
         }
 
         public UserHandler()
         {
-            users = LoadFromDisc();
+            _users = LoadFromDisc();
         }
     }
 }
