@@ -8,7 +8,7 @@ namespace do_account_checker
 {
     public partial class MainForm : Form
     {
-        private readonly GuiHandler _guiHandler;
+        private readonly GuiHandler _guiHandler;    
         public MainForm()
         {
             InitializeComponent();
@@ -74,9 +74,10 @@ namespace do_account_checker
             lblHonor.Text = honor;
         }
 
-        public void SetRank(string rank, Image rankImage)
+        public void SetRank(string rank, string rankImageUrl)
         {
-            lblRank.Text = rank;
+            //lblRank.Text = rank;
+            imgRank.Load(rankImageUrl);
         }
 
         public void AddToList(User[] users)
@@ -116,6 +117,8 @@ namespace do_account_checker
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            if (listAccounts.SelectedItems.Count == 0)
+                return;
             var index = listAccounts.Items.IndexOf(listAccounts.SelectedItems[0]); //TODO SelectedIndices?
             _guiHandler.LoginSelected(index);
         }

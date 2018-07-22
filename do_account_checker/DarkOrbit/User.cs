@@ -58,8 +58,7 @@ namespace do_account_checker.DarkOrbit
 
         public string Rank => _content.GetBetween("userRankIcon", "</div>").GetBetween(">", "\n").Remove(0,1);
 
-        public Image RankImage => Image.FromStream(new MemoryStream(
-            new WebClient().DownloadData("https://darkorbit-22.bpsecure.com/do_img/global/ranks/rank_1.png")));
+        public string RankImageUrl => _content.GetBetween("<img id=\"userRankIcon\" src=\"", ">");
 
         public string CollectDaily()
         {

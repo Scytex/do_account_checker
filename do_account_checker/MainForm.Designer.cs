@@ -53,6 +53,8 @@
             this.lblExperience = new System.Windows.Forms.Label();
             this.lblHonorNOEDIT = new System.Windows.Forms.Label();
             this.lblHonor = new System.Windows.Forms.Label();
+            this.lblRankNOEDIT = new System.Windows.Forms.Label();
+            this.lblRank = new System.Windows.Forms.Label();
             this.pnlAccounts = new System.Windows.Forms.GroupBox();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnCollectAll = new System.Windows.Forms.Button();
@@ -64,12 +66,12 @@
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnDailyStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columPlaceholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblRankNOEDIT = new System.Windows.Forms.Label();
-            this.lblRank = new System.Windows.Forms.Label();
+            this.imgRank = new System.Windows.Forms.PictureBox();
             this.pnlLogin.SuspendLayout();
             this.pnlAccountInformation.SuspendLayout();
             this.flowlayAccountInformations.SuspendLayout();
             this.pnlAccounts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgRank)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogin
@@ -188,6 +190,7 @@
             this.flowlayAccountInformations.Controls.Add(this.lblHonorNOEDIT);
             this.flowlayAccountInformations.Controls.Add(this.lblHonor);
             this.flowlayAccountInformations.Controls.Add(this.lblRankNOEDIT);
+            this.flowlayAccountInformations.Controls.Add(this.imgRank);
             this.flowlayAccountInformations.Controls.Add(this.lblRank);
             this.flowlayAccountInformations.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowlayAccountInformations.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -323,6 +326,25 @@
             this.lblHonor.Size = new System.Drawing.Size(0, 13);
             this.lblHonor.TabIndex = 13;
             // 
+            // lblRankNOEDIT
+            // 
+            this.lblRankNOEDIT.AutoSize = true;
+            this.lblRankNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRankNOEDIT.Location = new System.Drawing.Point(59, 52);
+            this.lblRankNOEDIT.Name = "lblRankNOEDIT";
+            this.lblRankNOEDIT.Size = new System.Drawing.Size(37, 13);
+            this.lblRankNOEDIT.TabIndex = 14;
+            this.lblRankNOEDIT.Text = "Rank";
+            // 
+            // lblRank
+            // 
+            this.lblRank.AutoSize = true;
+            this.lblRank.Location = new System.Drawing.Point(59, 87);
+            this.lblRank.Name = "lblRank";
+            this.lblRank.Size = new System.Drawing.Size(0, 13);
+            this.lblRank.TabIndex = 16;
+            this.lblRank.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // pnlAccounts
             // 
             this.pnlAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -440,24 +462,13 @@
             this.columPlaceholder.Text = "";
             this.columPlaceholder.Width = 538;
             // 
-            // lblRankNOEDIT
+            // imgRank
             // 
-            this.lblRankNOEDIT.AutoSize = true;
-            this.lblRankNOEDIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRankNOEDIT.Location = new System.Drawing.Point(59, 52);
-            this.lblRankNOEDIT.Name = "lblRankNOEDIT";
-            this.lblRankNOEDIT.Size = new System.Drawing.Size(37, 13);
-            this.lblRankNOEDIT.TabIndex = 14;
-            this.lblRankNOEDIT.Text = "Rank";
-            // 
-            // lblRank
-            // 
-            this.lblRank.AutoSize = true;
-            this.lblRank.Location = new System.Drawing.Point(59, 65);
-            this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(0, 13);
-            this.lblRank.TabIndex = 16;
-            this.lblRank.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.imgRank.Location = new System.Drawing.Point(59, 68);
+            this.imgRank.Name = "imgRank";
+            this.imgRank.Size = new System.Drawing.Size(26, 16);
+            this.imgRank.TabIndex = 17;
+            this.imgRank.TabStop = false;
             // 
             // MainForm
             // 
@@ -475,6 +486,7 @@
             this.flowlayAccountInformations.ResumeLayout(false);
             this.flowlayAccountInformations.PerformLayout();
             this.pnlAccounts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgRank)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -519,6 +531,7 @@
         private System.Windows.Forms.ColumnHeader columnDailyStatus;
         private System.Windows.Forms.Label lblRankNOEDIT;
         private System.Windows.Forms.Label lblRank;
+        private System.Windows.Forms.PictureBox imgRank;
     }
 }
 
