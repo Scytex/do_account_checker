@@ -82,7 +82,7 @@ namespace do_account_checker.DarkOrbit
             var mainPage = _webRequestHandler.Get("https://www.darkorbit.com").Content;
             var authUrl = WebUtility.HtmlDecode(mainPage.GetBetween("class=\"bgcdw_login_form\" action=\"", "\""));
 
-            var response = _webRequestHandler.Post(authUrl, new KeyValuePair<string, object>("username", Username), new KeyValuePair<string, object>("password", Password));
+            var response = _webRequestHandler.Post(authUrl, new KeyValuePair<string, object>("username", WebUtility.HtmlEncode(Username)), new KeyValuePair<string, object>("password", WebUtility.HtmlEncode(Password)));
             _content = response.Content;
             _uri = response.ResponseUri.AbsoluteUri;
             var status = _uri.Contains("indexInternal.es");
